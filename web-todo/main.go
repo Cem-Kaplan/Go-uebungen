@@ -1,10 +1,15 @@
 package main
 
-import "github.com/gin-gonic/gin"
+import (
+	"database/sql"
+
+	"github.com/gin-gonic/gin"
+)
+
+var db *sql.DB
 
 func main() {
 	r := gin.Default()
-
 	r.LoadHTMLGlob("templates/*")
 	r.Static("/static", "static/*")
 
